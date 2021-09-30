@@ -20,6 +20,7 @@
 		9370D1A92705B18C00D12B82 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9370D1A82705B18C00D12B82 /* Details.storyboard */; };
 		9370D1AB2705B1A500D12B82 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370D1AA2705B1A500D12B82 /* DetailsViewController.swift */; };
 		9370D1AD2705B84000D12B82 /* UIView+Modifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370D1AC2705B84000D12B82 /* UIView+Modifications.swift */; };
+		93B098242705FA3500F90219 /* AlbumTracklistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B098232705FA3500F90219 /* AlbumTracklistResponse.swift */; };
 		EC65C46C2E522B428D74BD19 /* Pods_TopPop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8718FE4CCE5141553F89429 /* Pods_TopPop.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		9370D1A82705B18C00D12B82 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		9370D1AA2705B1A500D12B82 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		9370D1AC2705B84000D12B82 /* UIView+Modifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Modifications.swift"; sourceTree = "<group>"; };
+		93B098232705FA3500F90219 /* AlbumTracklistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTracklistResponse.swift; sourceTree = "<group>"; };
 		C85E775989D78BFCEA01A568 /* Pods-TopPop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopPop.release.xcconfig"; path = "Target Support Files/Pods-TopPop/Pods-TopPop.release.xcconfig"; sourceTree = "<group>"; };
 		F8718FE4CCE5141553F89429 /* Pods_TopPop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TopPop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -62,7 +64,6 @@
 				5770423393774398718C572E /* Pods-TopPop.debug.xcconfig */,
 				C85E775989D78BFCEA01A568 /* Pods-TopPop.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -136,6 +137,7 @@
 			children = (
 				9370D1A02705A27800D12B82 /* ChartTracksResponse.swift */,
 				9370D1A22705A53C00D12B82 /* ErrorResponse.swift */,
+				93B098232705FA3500F90219 /* AlbumTracklistResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -311,6 +313,7 @@
 			files = (
 				9370D19F2705A21600D12B82 /* NetworkController.swift in Sources */,
 				9370D18627059B5A00D12B82 /* HomeViewController.swift in Sources */,
+				93B098242705FA3500F90219 /* AlbumTracklistResponse.swift in Sources */,
 				9370D18227059B5A00D12B82 /* AppDelegate.swift in Sources */,
 				9370D1AB2705B1A500D12B82 /* DetailsViewController.swift in Sources */,
 				9370D1A32705A53C00D12B82 /* ErrorResponse.swift in Sources */,

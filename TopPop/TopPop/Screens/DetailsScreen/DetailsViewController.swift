@@ -16,14 +16,16 @@ class DetailsViewController: UIViewController {
     @IBOutlet private weak var albumNameLabel: UILabel!
     @IBOutlet private weak var albumImageView: UIImageView!
     @IBOutlet private weak var tracksListLabel: UILabel!
+    @IBOutlet private weak var scrollView: UIScrollView!
     
     var track: Track?
+    var tracklist: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let track = track else { return }
         configureUI()
-
-        // Do any additional setup after loading the view.
+        getTracklist(for: track.album.id)
     }
 }
 
@@ -31,6 +33,31 @@ class DetailsViewController: UIViewController {
 // MARK: Functions
 
 private extension DetailsViewController {
+    
+    func getTracklist(for id: Int) {
+        NetworkController.getTracklist(for: id) { error, dataResponse in
+            if let error = error {
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "An error occured.", message: "\(error)", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                }
+            }
+            
+            if let dataResponse = dataResponse {
+                
+                DispatchQueue.main.async {
+                    dataResponse.data.forEach { track2 in
+                        let t = track2.title
+                        self.tracklist.append(contentsOf: "\(t)\n")
+                    }
+                    self.tracksListLabel.text = self.tracklist
+                  
+                }
+            }
+        }
+    }
+    
     func configureUI(){
         guard let track = track else { return }
         
@@ -44,6 +71,8 @@ private extension DetailsViewController {
         containerView.makeRoundedTopCorners(withCornerRadius: 20)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
         transparentView.addGestureRecognizer(tapGesture)
+        
+        scrollView.contentLayoutGuide.bottomAnchor.constraint(equalTo: tracksListLabel.bottomAnchor).isActive = true
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer) {

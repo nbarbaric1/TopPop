@@ -13,9 +13,18 @@ class HomeViewController: UIViewController {
     // MARK: IBOutlets
     
     @IBOutlet private weak var tracksTableView: UITableView!
+    @IBOutlet private weak var optionsMenuContainerView: UIView!
+    @IBOutlet private weak var optionsMenuContainerViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var optionsMenuButton: UIButton!
+    @IBOutlet private weak var normalSortButton: UIButton!
+    @IBOutlet private weak var ascSortButton: UIButton!
+    @IBOutlet private weak var descSortButton: UIButton!
+    
+    
     
     // MARK: Properties
     private var topTracks: [Track] = []
+    private var isOptionsMenuExpanded = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +49,18 @@ class HomeViewController: UIViewController {
     }
 }
 
+extension HomeViewController {
+    @IBAction func optionsMenuButtonActionHandler() {
+        if isOptionsMenuExpanded {
+            shrinkOptionsMenu()
+        }
+        else {
+            expandOptionsMenu()
+        }
+    }
+
+}
+
 private extension HomeViewController {
     func navigateToDetailsScreen(for track: Track){
         let nextScreen = "Details"
@@ -47,6 +68,28 @@ private extension HomeViewController {
         let nextViewController = storyboard.instantiateViewController(withIdentifier: String( nextScreen + "ViewController")) as! DetailsViewController
         nextViewController.track = track
         navigationController?.present(nextViewController, animated: true, completion: nil)
+    }
+    
+    func shrinkOptionsMenu() {
+        UIView.animate(withDuration: 1, delay: 0, options: .allowUserInteraction){
+            self.optionsMenuContainerViewHeightConstraint.constant = 50
+            self.normalSortButton.isHidden = true
+            self.ascSortButton.isHidden = true
+            self.descSortButton.isHidden = true
+            self.isOptionsMenuExpanded = false
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func expandOptionsMenu() {
+        UIView.animate(withDuration: 1, delay: 0, options: .allowUserInteraction){
+            self.optionsMenuContainerViewHeightConstraint.constant = 200
+            self.normalSortButton.isHidden = false
+            self.ascSortButton.isHidden = false
+            self.descSortButton.isHidden = false
+            self.isOptionsMenuExpanded = true
+        self.view.layoutIfNeeded()
+        }
     }
 }
 
@@ -66,7 +109,9 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("sad")
         tableView.deselectRow(at: indexPath, animated: true)
+        
         navigateToDetailsScreen(for: topTracks[indexPath.row])
     }
 }

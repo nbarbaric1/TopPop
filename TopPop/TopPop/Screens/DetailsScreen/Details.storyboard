@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hID-AZ-1m6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -33,32 +33,46 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. ssacascascasfdoajfosda 2. fasdsdf  3. fdsadfdsa 4. 5. 6. 7. 8. 9. 10." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCo-dU-my5">
-                                        <rect key="frame" x="106.5" y="379" width="201.5" height="203"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2C1-Cq-5Nf">
                                         <rect key="frame" x="207" y="309" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="0.0"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ab-9N-bhc">
+                                        <rect key="frame" x="83" y="369" width="248" height="268.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. ssacascascasfdoajfosda 2. fasdsdf  3. fdsadfdsa 4. 5. 6. 7. 8. 9. 10." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCo-dU-my5">
+                                                <rect key="frame" x="0.0" y="0.0" width="248" height="203"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ZCo-dU-my5" secondAttribute="trailing" id="4SR-IO-gyY"/>
+                                            <constraint firstItem="ZCo-dU-my5" firstAttribute="width" secondItem="5ab-9N-bhc" secondAttribute="width" id="C7y-zU-265"/>
+                                            <constraint firstItem="ZCo-dU-my5" firstAttribute="top" secondItem="5ab-9N-bhc" secondAttribute="top" id="HT2-FH-n3X"/>
+                                            <constraint firstAttribute="bottom" secondItem="ZCo-dU-my5" secondAttribute="bottom" constant="65.5" id="OzW-kA-6uK"/>
+                                            <constraint firstItem="ZCo-dU-my5" firstAttribute="leading" secondItem="5ab-9N-bhc" secondAttribute="leading" id="r4g-Nk-BB3"/>
+                                        </constraints>
+                                    </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="5ab-9N-bhc" firstAttribute="height" secondItem="GsN-xY-YFU" secondAttribute="height" multiplier="0.4" id="2vE-ef-weW"/>
                                     <constraint firstItem="Mwf-ZE-64K" firstAttribute="top" secondItem="2C1-Cq-5Nf" secondAttribute="bottom" constant="4" id="9nA-kS-bys"/>
                                     <constraint firstItem="bEH-h3-0bd" firstAttribute="centerX" secondItem="GsN-xY-YFU" secondAttribute="centerX" id="AeZ-Dc-R7F"/>
                                     <constraint firstItem="Mwf-ZE-64K" firstAttribute="centerX" secondItem="GsN-xY-YFU" secondAttribute="centerX" id="BzI-rg-khR"/>
-                                    <constraint firstItem="ZCo-dU-my5" firstAttribute="top" secondItem="bEH-h3-0bd" secondAttribute="bottom" constant="20" id="HbO-XG-aMO"/>
                                     <constraint firstItem="2C1-Cq-5Nf" firstAttribute="centerX" secondItem="GsN-xY-YFU" secondAttribute="centerX" id="JYa-lh-0nk"/>
-                                    <constraint firstItem="ZCo-dU-my5" firstAttribute="centerX" secondItem="GsN-xY-YFU" secondAttribute="centerX" id="Knw-O2-Fvb"/>
+                                    <constraint firstItem="5ab-9N-bhc" firstAttribute="width" secondItem="GsN-xY-YFU" secondAttribute="width" multiplier="0.6" id="NpH-6n-P4A"/>
                                     <constraint firstItem="ngI-bR-Tse" firstAttribute="height" secondItem="GsN-xY-YFU" secondAttribute="height" multiplier="0.4" id="Nsn-26-BS2"/>
                                     <constraint firstItem="ngI-bR-Tse" firstAttribute="top" secondItem="GsN-xY-YFU" secondAttribute="top" constant="30" id="QlE-m2-mLh"/>
                                     <constraint firstItem="ngI-bR-Tse" firstAttribute="width" secondItem="GsN-xY-YFU" secondAttribute="width" multiplier="0.6" id="d1E-1b-Fkk"/>
                                     <constraint firstItem="2C1-Cq-5Nf" firstAttribute="top" secondItem="ngI-bR-Tse" secondAttribute="bottom" constant="10" id="dUa-VA-cjy"/>
+                                    <constraint firstItem="5ab-9N-bhc" firstAttribute="top" secondItem="bEH-h3-0bd" secondAttribute="bottom" constant="10" id="fzT-uB-3yu"/>
                                     <constraint firstItem="bEH-h3-0bd" firstAttribute="top" secondItem="Mwf-ZE-64K" secondAttribute="bottom" constant="4" id="nnI-Je-POM"/>
+                                    <constraint firstItem="5ab-9N-bhc" firstAttribute="centerX" secondItem="GsN-xY-YFU" secondAttribute="centerX" id="qRG-Om-FB3"/>
                                     <constraint firstItem="ngI-bR-Tse" firstAttribute="centerX" secondItem="GsN-xY-YFU" secondAttribute="centerX" id="wPQ-D6-MUX"/>
                                 </constraints>
                             </view>
@@ -86,6 +100,7 @@
                         <outlet property="albumNameLabel" destination="2C1-Cq-5Nf" id="1yh-Eq-PqB"/>
                         <outlet property="artistNameLabel" destination="Mwf-ZE-64K" id="JMD-kv-YQR"/>
                         <outlet property="containerView" destination="GsN-xY-YFU" id="m2Y-5L-aL3"/>
+                        <outlet property="scrollView" destination="5ab-9N-bhc" id="mIj-fS-gti"/>
                         <outlet property="songNameLabel" destination="bEH-h3-0bd" id="upe-L9-47W"/>
                         <outlet property="tracksListLabel" destination="ZCo-dU-my5" id="rYR-C9-4gn"/>
                         <outlet property="transparentView" destination="WzE-as-au1" id="yze-jv-zDK"/>
@@ -93,25 +108,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="79.6875"/>
+            <point key="canvasLocation" x="2749.275362318841" y="79.6875"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Oj6-6T-COX">
+        <scene sceneID="St5-sF-380">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0ff-UJ-S22" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hID-AZ-1m6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bCs-aI-AXu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Dy-Np-FwF">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="9Ah-ud-Esx"/>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="2f6-j4-AyD"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eQZ-kn-72F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gcJ-pa-6nu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="79.6875"/>
+            <point key="canvasLocation" x="1839.1304347826087" y="79.6875"/>
         </scene>
     </scenes>
     <resources>
