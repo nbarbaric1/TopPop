@@ -23,7 +23,10 @@ class HomeViewController: UIViewController {
     
     
     // MARK: Properties
-    private var topTracks: [Track] = []
+    private var topTracksSortedAsc: [Track] = []
+    private var topTracksSortedDesc: [Track] = []
+    private var topTracksUnsorted: [Track] = []
+    private var sortedBy: SortingOption = .unsorted
     private var isOptionsMenuExpanded = false
 
     override func viewDidLoad() {
@@ -41,7 +44,8 @@ class HomeViewController: UIViewController {
             
             if let dataResponse = dataResponse {
                 DispatchQueue.main.async {
-                    self.topTracks = dataResponse.data
+                    self.topTracksUnsorted = dataResponse.data
+                    self.sortData()
                     self.tracksTableView.reloadData()
                 }
             }
@@ -58,10 +62,31 @@ extension HomeViewController {
             expandOptionsMenu()
         }
     }
+    
+    @IBAction func normalSortButtonActionHandler() {
+        sortedBy = .unsorted
+        tracksTableView.reloadData()
+    }
+    
+    @IBAction func ascSortButtonActionHandler() {
+        sortedBy = .asc
+        tracksTableView.reloadData()
+    }
+    
+    @IBAction func descSortButtonActionHandler() {
+        sortedBy = .desc
+        tracksTableView.reloadData()
+    }
 
 }
 
 private extension HomeViewController {
+    
+    func sortData() {
+        topTracksSortedDesc = topTracksUnsorted.sorted(by: { $0.duration > $1.duration })
+        topTracksSortedAsc  = topTracksUnsorted.sorted(by: { $0.duration < $1.duration })
+    }
+    
     func navigateToDetailsScreen(for track: Track){
         let nextScreen = "Details"
         let storyboard = UIStoryboard(name: nextScreen, bundle: nil)
@@ -77,6 +102,7 @@ private extension HomeViewController {
             self.ascSortButton.isHidden = true
             self.descSortButton.isHidden = true
             self.isOptionsMenuExpanded = false
+            self.optionsMenuButton.setImage(UIImage(systemName: "arrow.down.circle.fill"), for: .normal)
             self.view.layoutIfNeeded()
         }
     }
@@ -88,7 +114,8 @@ private extension HomeViewController {
             self.ascSortButton.isHidden = false
             self.descSortButton.isHidden = false
             self.isOptionsMenuExpanded = true
-        self.view.layoutIfNeeded()
+            self.optionsMenuButton.setImage(UIImage(systemName: "arrow.up.circle.fill"), for: .normal)
+            self.view.layoutIfNeeded()
         }
     }
 }
@@ -99,20 +126,52 @@ extension HomeViewController: UITableViewDelegate {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        topTracks.count
+        
+        switch sortedBy {
+            
+        case .unsorted:
+            return topTracksUnsorted.count
+        case .asc:
+            return topTracksSortedAsc.count
+        case .desc:
+            return topTracksSortedDesc.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TrackTableViewCell.self), for: indexPath) as! TrackTableViewCell
-        cell.configureCell(with: topTracks[indexPath.row])
+        
+        switch sortedBy {
+            
+        case .unsorted:
+            cell.configureCell(with: topTracksUnsorted[indexPath.row])
+        case .asc:
+            cell.configureCell(with: topTracksSortedAsc[indexPath.row])
+        case .desc:
+            cell.configureCell(with: topTracksSortedDesc[indexPath.row])
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("sad")
         tableView.deselectRow(at: indexPath, animated: true)
         
-        navigateToDetailsScreen(for: topTracks[indexPath.row])
+        switch sortedBy {
+            
+        case .unsorted:
+            navigateToDetailsScreen(for: topTracksUnsorted[indexPath.row])
+        case .asc:
+            navigateToDetailsScreen(for: topTracksSortedAsc[indexPath.row])
+        case .desc:
+            navigateToDetailsScreen(for: topTracksSortedDesc[indexPath.row])
+        }
+        
     }
 }
 
+enum SortingOption: String {
+    case unsorted = "unsorted"
+    case asc = "ascending"
+    case desc = "descending"
+}

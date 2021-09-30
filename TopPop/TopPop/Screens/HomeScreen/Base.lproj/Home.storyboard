@@ -121,44 +121,53 @@
                                             <action selector="optionsMenuButtonActionHandler" destination="BYZ-38-t0r" eventType="touchUpInside" id="1G4-1a-VxQ"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0l-eq-OjN">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="50"/>
-                                        <color key="backgroundColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0l-eq-OjN">
+                                        <rect key="frame" x="0.0" y="51" width="414" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="TNN-sK-mZ7"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Normal"/>
+                                        <connections>
+                                            <action selector="normalSortButtonActionHandler" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qpj-bZ-8WY"/>
+                                        </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6n-7k-jse">
-                                        <rect key="frame" x="0.0" y="100" width="414" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6n-7k-jse">
+                                        <rect key="frame" x="0.0" y="102" width="414" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="5Pg-jk-og4"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Asc"/>
+                                        <connections>
+                                            <action selector="ascSortButtonActionHandler" destination="BYZ-38-t0r" eventType="touchUpInside" id="COJ-0A-xnB"/>
+                                        </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMH-gZ-HQQ">
-                                        <rect key="frame" x="0.0" y="150" width="414" height="50"/>
-                                        <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMH-gZ-HQQ">
+                                        <rect key="frame" x="0.0" y="153" width="414" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="pN6-9s-4gi"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Desc"/>
+                                        <connections>
+                                            <action selector="descSortButtonActionHandler" destination="BYZ-38-t0r" eventType="touchUpInside" id="nFj-RF-FHr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <color key="backgroundColor" red="0.70616694592466256" green="0.20976781151263732" blue="0.27609577921702327" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="Stq-hD-wGg" firstAttribute="top" secondItem="Foo-hQ-1FR" secondAttribute="top" constant="10" id="4S1-5W-iWg"/>
-                                    <constraint firstItem="q0l-eq-OjN" firstAttribute="top" secondItem="Foo-hQ-1FR" secondAttribute="top" constant="50" id="ENn-wQ-iBH"/>
+                                    <constraint firstItem="q0l-eq-OjN" firstAttribute="top" secondItem="Foo-hQ-1FR" secondAttribute="top" constant="51" id="ENn-wQ-iBH"/>
                                     <constraint firstItem="k3q-dS-i5b" firstAttribute="top" secondItem="Foo-hQ-1FR" secondAttribute="top" id="GlC-Ab-dWW"/>
                                     <constraint firstAttribute="trailing" secondItem="q0l-eq-OjN" secondAttribute="trailing" id="Kvg-jt-vr2"/>
                                     <constraint firstItem="Stq-hD-wGg" firstAttribute="leading" secondItem="Foo-hQ-1FR" secondAttribute="leading" constant="20" id="Ps2-9c-V8b"/>
-                                    <constraint firstItem="H6n-7k-jse" firstAttribute="top" secondItem="q0l-eq-OjN" secondAttribute="bottom" id="PsU-bU-VlZ"/>
+                                    <constraint firstItem="H6n-7k-jse" firstAttribute="top" secondItem="q0l-eq-OjN" secondAttribute="bottom" constant="1" id="PsU-bU-VlZ"/>
                                     <constraint firstAttribute="height" constant="50" id="YB3-jH-Yuu"/>
-                                    <constraint firstItem="FMH-gZ-HQQ" firstAttribute="top" secondItem="H6n-7k-jse" secondAttribute="bottom" id="fB6-P8-jcB"/>
+                                    <constraint firstItem="FMH-gZ-HQQ" firstAttribute="top" secondItem="H6n-7k-jse" secondAttribute="bottom" constant="1" id="fB6-P8-jcB"/>
                                     <constraint firstItem="q0l-eq-OjN" firstAttribute="leading" secondItem="Foo-hQ-1FR" secondAttribute="leading" id="h9F-6S-SKZ"/>
                                     <constraint firstItem="FMH-gZ-HQQ" firstAttribute="leading" secondItem="Foo-hQ-1FR" secondAttribute="leading" id="noL-Pm-4JD"/>
                                     <constraint firstAttribute="trailing" secondItem="k3q-dS-i5b" secondAttribute="trailing" id="qV1-hh-KAv"/>
@@ -185,6 +194,7 @@
                         <outlet property="ascSortButton" destination="H6n-7k-jse" id="4Ke-58-JY5"/>
                         <outlet property="descSortButton" destination="FMH-gZ-HQQ" id="6NF-W4-oya"/>
                         <outlet property="normalSortButton" destination="q0l-eq-OjN" id="4Yt-Kf-pnY"/>
+                        <outlet property="optionsMenuButton" destination="k3q-dS-i5b" id="QDK-k6-D2K"/>
                         <outlet property="optionsMenuContainerView" destination="Foo-hQ-1FR" id="d0w-pf-Lmc"/>
                         <outlet property="optionsMenuContainerViewHeightConstraint" destination="YB3-jH-Yuu" id="Msn-r2-t36"/>
                         <outlet property="tracksTableView" destination="xE9-nx-9HU" id="Z76-nr-xYz"/>
@@ -220,9 +230,6 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
