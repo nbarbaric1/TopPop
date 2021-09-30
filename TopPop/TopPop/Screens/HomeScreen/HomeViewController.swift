@@ -39,6 +39,16 @@ class HomeViewController: UIViewController {
     }
 }
 
+private extension HomeViewController {
+    func navigateToDetailsScreen(for track: Track){
+        let nextScreen = "Details"
+        let storyboard = UIStoryboard(name: nextScreen, bundle: nil)
+        let nextViewController = storyboard.instantiateViewController(withIdentifier: String( nextScreen + "ViewController")) as! DetailsViewController
+        nextViewController.track = track
+        navigationController?.present(nextViewController, animated: true, completion: nil)
+    }
+}
+
 extension HomeViewController: UITableViewDelegate {
     
 }
@@ -54,7 +64,9 @@ extension HomeViewController: UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        navigateToDetailsScreen(for: topTracks[indexPath.row])
+    }
 }
-
 

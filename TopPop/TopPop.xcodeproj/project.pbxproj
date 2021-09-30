@@ -17,6 +17,9 @@
 		9370D1A12705A27800D12B82 /* ChartTracksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370D1A02705A27800D12B82 /* ChartTracksResponse.swift */; };
 		9370D1A32705A53C00D12B82 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370D1A22705A53C00D12B82 /* ErrorResponse.swift */; };
 		9370D1A72705AD1500D12B82 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370D1A62705AD1500D12B82 /* TrackTableViewCell.swift */; };
+		9370D1A92705B18C00D12B82 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9370D1A82705B18C00D12B82 /* Details.storyboard */; };
+		9370D1AB2705B1A500D12B82 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370D1AA2705B1A500D12B82 /* DetailsViewController.swift */; };
+		9370D1AD2705B84000D12B82 /* UIView+Modifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370D1AC2705B84000D12B82 /* UIView+Modifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		9370D1A02705A27800D12B82 /* ChartTracksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTracksResponse.swift; sourceTree = "<group>"; };
 		9370D1A22705A53C00D12B82 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		9370D1A62705AD1500D12B82 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
+		9370D1A82705B18C00D12B82 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
+		9370D1AA2705B1A500D12B82 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		9370D1AC2705B84000D12B82 /* UIView+Modifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Modifications.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 		9370D19527059B7B00D12B82 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9370D1AC2705B84000D12B82 /* UIView+Modifications.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -121,8 +128,8 @@
 			children = (
 				9370D1A52705ACF900D12B82 /* CustomTableViewCells */,
 				9370D19D27059C0100D12B82 /* LaunchScreen */,
-				9370D19C27059BDB00D12B82 /* DetailsScreen */,
 				9370D19B27059BCE00D12B82 /* HomeScreen */,
+				9370D19C27059BDB00D12B82 /* DetailsScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -139,6 +146,8 @@
 		9370D19C27059BDB00D12B82 /* DetailsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				9370D1A82705B18C00D12B82 /* Details.storyboard */,
+				9370D1AA2705B1A500D12B82 /* DetailsViewController.swift */,
 			);
 			path = DetailsScreen;
 			sourceTree = "<group>";
@@ -220,6 +229,7 @@
 				9370D18E27059B5C00D12B82 /* LaunchScreen.storyboard in Resources */,
 				9370D18B27059B5C00D12B82 /* Assets.xcassets in Resources */,
 				9370D18927059B5A00D12B82 /* Home.storyboard in Resources */,
+				9370D1A92705B18C00D12B82 /* Details.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,9 +243,11 @@
 				9370D19F2705A21600D12B82 /* NetworkController.swift in Sources */,
 				9370D18627059B5A00D12B82 /* HomeViewController.swift in Sources */,
 				9370D18227059B5A00D12B82 /* AppDelegate.swift in Sources */,
+				9370D1AB2705B1A500D12B82 /* DetailsViewController.swift in Sources */,
 				9370D1A32705A53C00D12B82 /* ErrorResponse.swift in Sources */,
 				9370D1A12705A27800D12B82 /* ChartTracksResponse.swift in Sources */,
 				9370D18427059B5A00D12B82 /* SceneDelegate.swift in Sources */,
+				9370D1AD2705B84000D12B82 /* UIView+Modifications.swift in Sources */,
 				9370D1A72705AD1500D12B82 /* TrackTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
