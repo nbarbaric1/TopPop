@@ -99,6 +99,14 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="CdF-jW-ZcL"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="WSn-uP-jt9">
+                                <rect key="frame" x="182" y="423" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="eMK-p5-gKZ"/>
+                                    <constraint firstAttribute="height" constant="50" id="uLU-Ub-keN"/>
+                                </constraints>
+                                <color key="color" red="0.70616694589999995" green="0.20976781150000001" blue="0.2760957792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Foo-hQ-1FR">
                                 <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
@@ -183,16 +191,19 @@
                             <constraint firstItem="xE9-nx-9HU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EXC-Sj-IE1"/>
                             <constraint firstItem="Foo-hQ-1FR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HIA-EM-tHx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xE9-nx-9HU" secondAttribute="bottom" id="Obl-ti-3oX"/>
+                            <constraint firstItem="WSn-uP-jt9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Q4R-FG-Ttp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Foo-hQ-1FR" secondAttribute="trailing" id="RFZ-ng-8gn"/>
                             <constraint firstItem="Foo-hQ-1FR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dvu-bo-He7"/>
                             <constraint firstItem="xE9-nx-9HU" firstAttribute="top" secondItem="Foo-hQ-1FR" secondAttribute="bottom" id="eKf-9j-QJJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xE9-nx-9HU" secondAttribute="trailing" id="gJ0-pD-KvU"/>
+                            <constraint firstItem="WSn-uP-jt9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gxN-aX-He4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AJz-3k-EUq"/>
                     <connections>
                         <outlet property="ascSortButton" destination="H6n-7k-jse" id="4Ke-58-JY5"/>
                         <outlet property="descSortButton" destination="FMH-gZ-HQQ" id="6NF-W4-oya"/>
+                        <outlet property="loadingActivityIndicatorView" destination="WSn-uP-jt9" id="DhF-DP-pfc"/>
                         <outlet property="normalSortButton" destination="q0l-eq-OjN" id="4Yt-Kf-pnY"/>
                         <outlet property="optionsMenuButton" destination="k3q-dS-i5b" id="QDK-k6-D2K"/>
                         <outlet property="optionsMenuContainerView" destination="Foo-hQ-1FR" id="d0w-pf-Lmc"/>

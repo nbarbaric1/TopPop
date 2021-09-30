@@ -9,6 +9,8 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
+    // MARK: - IBOutlets
+    
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var transparentView: UIView!
     @IBOutlet private weak var songNameLabel: UILabel!
@@ -18,9 +20,13 @@ class DetailsViewController: UIViewController {
     @IBOutlet private weak var tracksListLabel: UILabel!
     @IBOutlet private weak var scrollView: UIScrollView!
     
+    // MARK: - Properties
+    
     var track: Track?
     var tracklist: String = ""
 
+    // MARK: - Lifecycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let track = track else { return }
@@ -52,7 +58,6 @@ private extension DetailsViewController {
                         self.tracklist.append(contentsOf: "\(t)\n")
                     }
                     self.tracksListLabel.text = self.tracklist
-                  
                 }
             }
         }
@@ -65,13 +70,9 @@ private extension DetailsViewController {
         artistNameLabel.text = track.artist.name
         albumNameLabel.text = track.album.title
         albumImageView.kf.setImage(with: track.album.coverMedium, placeholder: UIImage(named: "music.note.house"))
-        
-        //tracksListLabel.text = track.album.tracklist
-        
         containerView.makeRoundedTopCorners(withCornerRadius: 20)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
         transparentView.addGestureRecognizer(tapGesture)
-        
         scrollView.contentLayoutGuide.bottomAnchor.constraint(equalTo: tracksListLabel.bottomAnchor).isActive = true
     }
     

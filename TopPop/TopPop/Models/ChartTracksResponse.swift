@@ -11,20 +11,18 @@ struct ChartTracksResponse: Codable {
     let total: Int
 }
 
-// MARK: - Datum
+// MARK: - Track
 struct Track: Codable {
     let id: Int
     let title: String
-    let duration, rank: Int
-    let md5Image: String
+    let duration: Int
     let position: Int
     let artist: Artist
     let album: Album
 
     enum CodingKeys: String, CodingKey {
         case id, title
-        case duration, rank
-        case md5Image = "md5_image"
+        case duration
         case position, artist, album
     }
 }
@@ -35,9 +33,7 @@ struct Album: Codable {
     let title: String
     let cover: URL
     let coverSmall, coverMedium, coverBig, coverXl: URL
-    let md5Image: URL
     let tracklist: String
-    let type: AlbumType
 
     enum CodingKeys: String, CodingKey {
         case id, title, cover
@@ -45,13 +41,8 @@ struct Album: Codable {
         case coverMedium = "cover_medium"
         case coverBig = "cover_big"
         case coverXl = "cover_xl"
-        case md5Image = "md5_image"
-        case tracklist, type
+        case tracklist
     }
-}
-
-enum AlbumType: String, Codable {
-    case album = "album"
 }
 
 // MARK: - Artist

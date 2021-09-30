@@ -10,7 +10,7 @@ import Kingfisher
 
 class HomeViewController: UIViewController {
     
-    // MARK: IBOutlets
+    // MARK: - IBOutlets
     
     @IBOutlet private weak var tracksTableView: UITableView!
     @IBOutlet private weak var optionsMenuContainerView: UIView!
@@ -19,39 +19,26 @@ class HomeViewController: UIViewController {
     @IBOutlet private weak var normalSortButton: UIButton!
     @IBOutlet private weak var ascSortButton: UIButton!
     @IBOutlet private weak var descSortButton: UIButton!
+    @IBOutlet private weak var loadingActivityIndicatorView: UIActivityIndicatorView!
     
+    // MARK: - Properties
     
-    
-    // MARK: Properties
     private var topTracksSortedAsc: [Track] = []
     private var topTracksSortedDesc: [Track] = []
     private var topTracksUnsorted: [Track] = []
     private var sortedBy: SortingOption = .unsorted
     private var isOptionsMenuExpanded = false
+    private let refreshControl = UIRefreshControl()
 
+    // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        NetworkController.getTop(number: 150) { error, dataResponse in
-            
-            if let error = error {
-                DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "An error occured.", message: "\(error)", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    self.present(alert, animated: true)
-                }
-            }
-            
-            if let dataResponse = dataResponse {
-                DispatchQueue.main.async {
-                    self.topTracksUnsorted = dataResponse.data
-                    self.sortData()
-                    self.tracksTableView.reloadData()
-                }
-            }
-        }
+        configureUI()
+        getTop(number: 50)
     }
 }
+
+// MARK: - IBActions
 
 extension HomeViewController {
     @IBAction func optionsMenuButtonActionHandler() {
@@ -77,10 +64,49 @@ extension HomeViewController {
         sortedBy = .desc
         tracksTableView.reloadData()
     }
-
 }
 
+// MARK: - Functions
+
 private extension HomeViewController {
+    
+    func getTop(number: Int) {
+        self.loadingActivityIndicatorView.startAnimating()
+        NetworkController.getTop(number: number) { error, dataResponse in
+            if let error = error {
+                DispatchQueue.main.async {
+                    self.loadingActivityIndicatorView.stopAnimating()
+                    let alert = UIAlertController(title: "An error occured.", message: "\(error)", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                }
+            }
+            
+            if let dataResponse = dataResponse {
+                DispatchQueue.main.async {
+                    self.topTracksUnsorted = dataResponse.data
+                    self.sortData()
+                    self.loadingActivityIndicatorView.stopAnimating()
+                    self.tracksTableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    func configureUI() {
+        configureTableView()
+    }
+    
+    func configureTableView() {
+        tracksTableView.refreshControl = refreshControl
+        refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+    }
+    
+    @objc private func refreshData(_ sender: Any) {
+        getTop(number: 10)
+        refreshControl.endRefreshing()
+    }
     
     func sortData() {
         topTracksSortedDesc = topTracksUnsorted.sorted(by: { $0.duration > $1.duration })
@@ -119,6 +145,8 @@ private extension HomeViewController {
         }
     }
 }
+
+// MARK: - UITableView protocols
 
 extension HomeViewController: UITableViewDelegate {
     
@@ -169,6 +197,8 @@ extension HomeViewController: UITableViewDataSource {
         
     }
 }
+
+// MARK: - Enums
 
 enum SortingOption: String {
     case unsorted = "unsorted"

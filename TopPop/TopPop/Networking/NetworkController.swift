@@ -22,7 +22,7 @@ struct NetworkController {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
-                let message = "There was a problem with your network request: \(error)"
+                let message = "There was a problem with your network request: \(error.localizedDescription)"
                 completionBlock(message, nil)
                 return
             }
@@ -60,7 +60,7 @@ struct NetworkController {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
-                let message = "There was a problem with your network request: \(error)"
+                let message = "There was a problem with your network request: \(error.localizedDescription)"
                 completionBlock(message, nil)
                 return
             }
@@ -76,7 +76,7 @@ struct NetworkController {
                         completionBlock(errorResponse.error.message, nil)
                     }
                     catch let error2 {
-                        let message = "Failed to parse a network response. Check your input and network connection. \(error2)"
+                        let message = "Failed to parse a network response. Check your input and network connection. \(error2.localizedDescription)"
                         completionBlock(message, nil)
                     }
                 }
