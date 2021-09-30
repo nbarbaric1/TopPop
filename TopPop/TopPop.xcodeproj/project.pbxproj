@@ -16,6 +16,7 @@
 		9370D19F2705A21600D12B82 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370D19E2705A21600D12B82 /* NetworkController.swift */; };
 		9370D1A12705A27800D12B82 /* ChartTracksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370D1A02705A27800D12B82 /* ChartTracksResponse.swift */; };
 		9370D1A32705A53C00D12B82 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370D1A22705A53C00D12B82 /* ErrorResponse.swift */; };
+		9370D1A72705AD1500D12B82 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370D1A62705AD1500D12B82 /* TrackTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9370D19E2705A21600D12B82 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		9370D1A02705A27800D12B82 /* ChartTracksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTracksResponse.swift; sourceTree = "<group>"; };
 		9370D1A22705A53C00D12B82 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		9370D1A62705AD1500D12B82 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		9370D19A27059BC500D12B82 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				9370D1A52705ACF900D12B82 /* CustomTableViewCells */,
 				9370D19D27059C0100D12B82 /* LaunchScreen */,
 				9370D19C27059BDB00D12B82 /* DetailsScreen */,
 				9370D19B27059BCE00D12B82 /* HomeScreen */,
@@ -146,6 +149,14 @@
 				9370D18C27059B5C00D12B82 /* LaunchScreen.storyboard */,
 			);
 			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		9370D1A52705ACF900D12B82 /* CustomTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				9370D1A62705AD1500D12B82 /* TrackTableViewCell.swift */,
+			);
+			path = CustomTableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +236,7 @@
 				9370D1A32705A53C00D12B82 /* ErrorResponse.swift in Sources */,
 				9370D1A12705A27800D12B82 /* ChartTracksResponse.swift in Sources */,
 				9370D18427059B5A00D12B82 /* SceneDelegate.swift in Sources */,
+				9370D1A72705AD1500D12B82 /* TrackTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
