@@ -4,7 +4,7 @@
 //
 //  Created by Nikola Barbarić on 30.09.2021..
 //
-
+import Kingfisher
 import UIKit
 
 class DetailsViewController: UIViewController {
@@ -37,6 +37,8 @@ private extension DetailsViewController {
         songNameLabel.text = track.title
         artistNameLabel.text = track.artist.name
         albumNameLabel.text = track.album.title
+        albumImageView.kf.setImage(with: track.album.coverMedium, placeholder: UIImage(named: "music.note.house"))
+        
         //tracksListLabel.text = track.album.tracklist
         
         containerView.makeRoundedTopCorners(withCornerRadius: 20)

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class TrackTableViewCell: UITableViewCell {
     
@@ -17,9 +18,25 @@ class TrackTableViewCell: UITableViewCell {
     
     func configureCell(with track: Track) {
         trackNameLabel.text = track.title
-        trackDurationLabel.text = String(track.duration)
+        trackDurationLabel.text = formatDuration(input: track.duration)
         artistNameLabel.text = track.artist.name
         trackPositionLabel.text = String(track.position)
+        artistImageView.kf.setImage(with: track.artist.pictureMedium, placeholder: UIImage(named: "music.note"))
     }
-
+    
+    func formatDuration(input: Int) -> String {
+        let minutes:String = input / 60 < 10 ? String("0\(input / 60)") : String(input / 60)
+        let seconds: String = input % 60 < 10 ? String("0\(input % 60)") : String(input % 60)
+        let output: String = minutes + ":" + seconds
+        return output
+    }
+    
+    override func prepareForReuse() {
+        trackNameLabel.text = ""
+        trackDurationLabel.text = ""
+        artistNameLabel.text = ""
+        trackPositionLabel.text = ""
+        artistImageView.image = nil
+        artistImageView.kf.cancelDownloadTask()
+    }
 }

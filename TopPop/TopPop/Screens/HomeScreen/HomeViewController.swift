@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HomeViewController: UIViewController {
     
@@ -19,7 +20,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        NetworkController.getTop(number: 10) { error, dataResponse in
+        NetworkController.getTop(number: 150) { error, dataResponse in
             
             if let error = error {
                 DispatchQueue.main.async {

@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,45 +16,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GsN-xY-YFU" userLabel="containerView">
-                                <rect key="frame" x="0.0" y="358.5" width="414" height="537.5"/>
+                                <rect key="frame" x="0.0" y="224" width="414" height="672"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEH-h3-0bd">
-                                        <rect key="frame" x="163" y="38" width="89" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwf-ZE-64K">
-                                        <rect key="frame" x="186" y="79" width="91" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Album name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2C1-Cq-5Nf">
-                                        <rect key="frame" x="163" y="138" width="96" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="slika albuma" translatesAutoresizingMaskIntoConstraints="NO" id="ngI-bR-Tse">
-                                        <rect key="frame" x="37" y="188" width="240" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music.note.house" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ngI-bR-Tse">
+                                        <rect key="frame" x="83" y="29" width="248" height="269"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1. sfdoajfosda 2. fasdsdf  3. fdsadfdsa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCo-dU-my5">
-                                        <rect key="frame" x="119" y="353" width="184" height="98"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEH-h3-0bd">
+                                        <rect key="frame" x="162.5" y="338" width="89" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwf-ZE-64K">
+                                        <rect key="frame" x="161.5" y="313" width="91" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. ssacascascasfdoajfosda 2. fasdsdf  3. fdsadfdsa 4. 5. 6. 7. 8. 9. 10." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCo-dU-my5">
+                                        <rect key="frame" x="106.5" y="379" width="201.5" height="203"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2C1-Cq-5Nf">
+                                        <rect key="frame" x="207" y="309" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="0.0"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Mwf-ZE-64K" firstAttribute="top" secondItem="2C1-Cq-5Nf" secondAttribute="bottom" constant="4" id="9nA-kS-bys"/>
+                                    <constraint firstItem="bEH-h3-0bd" firstAttribute="centerX" secondItem="GsN-xY-YFU" secondAttribute="centerX" id="AeZ-Dc-R7F"/>
+                                    <constraint firstItem="Mwf-ZE-64K" firstAttribute="centerX" secondItem="GsN-xY-YFU" secondAttribute="centerX" id="BzI-rg-khR"/>
+                                    <constraint firstItem="ZCo-dU-my5" firstAttribute="top" secondItem="bEH-h3-0bd" secondAttribute="bottom" constant="20" id="HbO-XG-aMO"/>
+                                    <constraint firstItem="2C1-Cq-5Nf" firstAttribute="centerX" secondItem="GsN-xY-YFU" secondAttribute="centerX" id="JYa-lh-0nk"/>
+                                    <constraint firstItem="ZCo-dU-my5" firstAttribute="centerX" secondItem="GsN-xY-YFU" secondAttribute="centerX" id="Knw-O2-Fvb"/>
+                                    <constraint firstItem="ngI-bR-Tse" firstAttribute="height" secondItem="GsN-xY-YFU" secondAttribute="height" multiplier="0.4" id="Nsn-26-BS2"/>
+                                    <constraint firstItem="ngI-bR-Tse" firstAttribute="top" secondItem="GsN-xY-YFU" secondAttribute="top" constant="30" id="QlE-m2-mLh"/>
+                                    <constraint firstItem="ngI-bR-Tse" firstAttribute="width" secondItem="GsN-xY-YFU" secondAttribute="width" multiplier="0.6" id="d1E-1b-Fkk"/>
+                                    <constraint firstItem="2C1-Cq-5Nf" firstAttribute="top" secondItem="ngI-bR-Tse" secondAttribute="bottom" constant="10" id="dUa-VA-cjy"/>
+                                    <constraint firstItem="bEH-h3-0bd" firstAttribute="top" secondItem="Mwf-ZE-64K" secondAttribute="bottom" constant="4" id="nnI-Je-POM"/>
+                                    <constraint firstItem="ngI-bR-Tse" firstAttribute="centerX" secondItem="GsN-xY-YFU" secondAttribute="centerX" id="wPQ-D6-MUX"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WzE-as-au1" userLabel="transparen">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="358.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -68,7 +76,7 @@
                             <constraint firstItem="WzE-as-au1" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="akp-dL-yEU"/>
                             <constraint firstAttribute="bottom" secondItem="GsN-xY-YFU" secondAttribute="bottom" id="gy9-EY-IDq"/>
                             <constraint firstItem="WzE-as-au1" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="hkQ-rZ-NYT"/>
-                            <constraint firstItem="GsN-xY-YFU" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.6" id="shm-Ll-4ff"/>
+                            <constraint firstItem="GsN-xY-YFU" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.75" id="shm-Ll-4ff"/>
                             <constraint firstAttribute="trailing" secondItem="WzE-as-au1" secondAttribute="trailing" id="w3m-ZP-8fu"/>
                         </constraints>
                     </view>
@@ -107,9 +115,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="slika albuma" width="500" height="500"/>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="music.note.house" catalog="system" width="128" height="106"/>
     </resources>
 </document>

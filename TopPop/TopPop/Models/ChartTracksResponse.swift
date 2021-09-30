@@ -33,9 +33,9 @@ struct Track: Codable {
 struct Album: Codable {
     let id: Int
     let title: String
-    let cover: String
-    let coverSmall, coverMedium, coverBig, coverXl: String
-    let md5Image: String
+    let cover: URL
+    let coverSmall, coverMedium, coverBig, coverXl: URL
+    let md5Image: URL
     let tracklist: String
     let type: AlbumType
 
@@ -57,8 +57,8 @@ enum AlbumType: String, Codable {
 // MARK: - Artist
 struct Artist: Codable {
     let name: String
-    let picture: String
-    let pictureSmall, pictureMedium, pictureBig, pictureXl: String
+    let picture: URL
+    let pictureSmall, pictureMedium, pictureBig, pictureXl: URL
 
     enum CodingKeys: String, CodingKey {
         case name, picture
