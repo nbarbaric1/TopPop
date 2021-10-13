@@ -26,6 +26,7 @@ class HomeViewController: UIViewController {
     private var topTracksSortedAsc: [Track] = []
     private var topTracksSortedDesc: [Track] = []
     private var topTracksUnsorted: [Track] = []
+    private var offset: Int = 0
     private var sortedBy: SortingOption = .unsorted
     private var isOptionsMenuExpanded = false
     private let refreshControl = UIRefreshControl()
@@ -34,7 +35,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        getTop(number: 50)
+        getTop10(offsetBy: offset)
     }
 }
 
@@ -70,9 +71,9 @@ extension HomeViewController {
 
 private extension HomeViewController {
     
-    func getTop(number: Int) {
+    func getTop10(offsetBy: Int) {
         self.loadingActivityIndicatorView.startAnimating()
-        NetworkController.getTop(number: number) { error, dataResponse in
+        NetworkController.getTop10(offsetBy: offsetBy) { error, dataResponse in
             if let error = error {
                 DispatchQueue.main.async {
                     self.loadingActivityIndicatorView.stopAnimating()
@@ -84,7 +85,7 @@ private extension HomeViewController {
             
             if let dataResponse = dataResponse {
                 DispatchQueue.main.async {
-                    self.topTracksUnsorted = dataResponse.data
+                    self.topTracksUnsorted.append(contentsOf: dataResponse.data)
                     self.sortData()
                     self.loadingActivityIndicatorView.stopAnimating()
                     self.tracksTableView.reloadData()
@@ -104,7 +105,12 @@ private extension HomeViewController {
     }
     
     @objc private func refreshData(_ sender: Any) {
-        getTop(number: 10)
+        topTracksUnsorted.removeAll()
+        topTracksSortedDesc.removeAll()
+        topTracksSortedAsc.removeAll()
+        tracksTableView.reloadData()
+        offset = 0
+        getTop10(offsetBy: offset)
         refreshControl.endRefreshing()
     }
     
@@ -194,7 +200,17 @@ extension HomeViewController: UITableViewDataSource {
         case .desc:
             navigateToDetailsScreen(for: topTracksSortedDesc[indexPath.row])
         }
-        
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if scrollView == tracksTableView {
+            if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height) {
+                if offset + 10 < 300 {
+                    offset = offset + 10
+                    getTop10(offsetBy: offset)
+                }
+            }
+        }
     }
 }
 

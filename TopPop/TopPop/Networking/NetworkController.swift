@@ -9,10 +9,11 @@ import Foundation
 
 struct NetworkController {
     
-    static func getTop(number: Int, completionBlock: @escaping (String?, ChartTracksResponse?) -> Void) {
+    static func getTop10(offsetBy offset: Int, completionBlock: @escaping (String?, ChartTracksResponse?) -> Void) {
         
-        let limit:String = URLPath.limit.rawValue + String(number)
-        let url = URLPath.base.rawValue + URLPath.topTracksPath.rawValue + limit
+        //let limit: String = URLPath.limit.rawValue + String(number)
+        let index: String = URLPath.index.rawValue + String(offset)
+        let url = URLPath.base.rawValue + URLPath.topTracksPath.rawValue + index
         
         guard let url = URL(string: url) else { return }
         
@@ -89,6 +90,7 @@ enum URLPath: String {
     case base = "https://api.deezer.com"
     case topTracksPath = "/chart/0/tracks"
     case limit = "?limit="
+    case index = "?index="
     case album = "/album"
     case tracklist = "/tracks"
 }
