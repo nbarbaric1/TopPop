@@ -18,8 +18,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xE9-nx-9HU">
                                 <rect key="frame" x="0.0" y="94" width="414" height="768"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrackTableViewCell" id="klY-kf-cJc" customClass="TrackTableViewCell" customModule="TopPop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="100"/>
@@ -28,8 +29,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAU-eS-hUf">
-                                                    <rect key="frame" x="362" y="38" width="42" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JAIL" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAU-eS-hUf">
+                                                    <rect key="frame" x="146.5" y="38" width="257.5" height="24"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -82,6 +83,7 @@
                                                 <constraint firstItem="tmy-yM-sM2" firstAttribute="top" secondItem="aAU-eS-hUf" secondAttribute="bottom" constant="4" id="aQp-Ix-MoN"/>
                                                 <constraint firstItem="aAU-eS-hUf" firstAttribute="centerY" secondItem="Kn8-na-j8z" secondAttribute="centerY" id="asN-PL-hlf"/>
                                                 <constraint firstItem="2ks-OA-vSH" firstAttribute="width" secondItem="Kn8-na-j8z" secondAttribute="width" multiplier="0.33" id="hNk-aa-mrZ"/>
+                                                <constraint firstItem="aAU-eS-hUf" firstAttribute="leading" secondItem="2ks-OA-vSH" secondAttribute="trailing" constant="10" id="oku-kE-GOc"/>
                                                 <constraint firstItem="2ks-OA-vSH" firstAttribute="leading" secondItem="Kn8-na-j8z" secondAttribute="leading" id="pfh-cz-Hmg"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -186,7 +188,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xE9-nx-9HU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EXC-Sj-IE1"/>
                             <constraint firstItem="Foo-hQ-1FR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HIA-EM-tHx"/>
@@ -236,9 +238,6 @@
     <resources>
         <image name="arrow.down.circle.fill" catalog="system" width="128" height="121"/>
         <image name="music.note" catalog="system" width="97" height="128"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

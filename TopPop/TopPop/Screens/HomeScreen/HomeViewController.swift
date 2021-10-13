@@ -108,8 +108,8 @@ private extension HomeViewController {
         topTracksUnsorted.removeAll()
         topTracksSortedDesc.removeAll()
         topTracksSortedAsc.removeAll()
-        tracksTableView.reloadData()
         offset = 0
+        tracksTableView.reloadData()
         getTop10(offsetBy: offset)
         refreshControl.endRefreshing()
     }
