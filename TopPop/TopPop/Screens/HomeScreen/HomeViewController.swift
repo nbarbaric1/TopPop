@@ -173,6 +173,18 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if offset == 0 && indexPath.row == 8 {
+            offset = offset + 10
+            getTop10(offsetBy: offset)
+        }
+        else if offset == indexPath.row - 2 {
+            if offset + 10 < 300 {
+                offset = offset + 10
+                getTop10(offsetBy: offset)
+            }
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TrackTableViewCell.self), for: indexPath) as! TrackTableViewCell
         
         switch sortedBy {
@@ -202,16 +214,16 @@ extension HomeViewController: UITableViewDataSource {
         }
     }
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if scrollView == tracksTableView {
-            if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height) {
-                if offset + 10 < 300 {
-                    offset = offset + 10
-                    getTop10(offsetBy: offset)
-                }
-            }
-        }
-    }
+//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        if scrollView == tracksTableView {
+//            if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height) {
+//                if offset + 10 < 300 {
+//                    offset = offset + 10
+//                    getTop10(offsetBy: offset)
+//                }
+//            }
+//        }
+//    }
 }
 
 // MARK: - Enums
